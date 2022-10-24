@@ -46,4 +46,5 @@ We need this to be a Web browser because people are less inclined to download so
 |--|--|
 |[Class](https://github.com/TrongQuocLe/CS151-TaskManagement/blob/main/diagrams/TaskManagementClassDiagram.pdf) |Contains `Workspace` interface and three classes included `Container`, `Compartments`, `Taks`.
 |[State](https://github.com/TrongQuocLe/CS151-TaskManagement/blob/main/diagrams/Trong_Le_TaskManagement_StateDiagram.pdf) |Contains `Task Management System` and `Task Modification`.
-|[Use Case](https://github.com/TrongQuocLe/CS151-TaskManagement/blob/main/diagrams/Use%20Case%20Diagram.pdf) |Allow main student doing all the tasks, but limit to other added student. 
+|[Use Case](https://github.com/TrongQuocLe/CS151-TaskManagement/blob/main/diagrams/Use%20Case%20Diagram.pdf) |Allows main student doing all the tasks, but limit to other added student. 
+|[Timing](https://github.com/TrongQuocLe/CS151-TaskManagement/blob/main/diagrams/Use%20Case%20Diagram.pdf) |Displays the change in state and value of tasks or projects.
