@@ -13,7 +13,7 @@ public abstract class Workspace implements Subject {
      * workspace.
      */
     private List<Observer> observers;
-    List<Container> containers;
+    List<ServerContainer> containers;
     String workspaceName;
     Timestamp creationDate;
 
@@ -30,7 +30,7 @@ public abstract class Workspace implements Subject {
     }
 
     @Override
-    public void notifyAllObservers(Container container) {
+    public void notifyAllObservers(ServerContainer container) {
         for (Observer observer : observers) {
             observer.updateContainer(containers, container);
         }
@@ -41,19 +41,19 @@ public abstract class Workspace implements Subject {
         this.workspaceName = workspaceName;
     }
 
-    public void addContainertoWorkspace(Container container) {
+    public void addContainertoWorkspace(ServerContainer container) {
         containers.add(container);
         notifyAllObservers(container);
     }
 
-    public void removeContainerfromWorkspace(Container container) {
+    public void removeContainerfromWorkspace(ServerContainer container) {
         containers.remove(container);
         notifyAllObservers(container);
     }
 
-    public abstract Container createAcademicContainer();
+    public abstract ServerContainer createAcademicContainer();
 
-    public abstract Container createProjectContainer();
+    public abstract ServerContainer createProjectContainer();
 
     // Main method for debugging purposes only
     public static void main(String[] args) {

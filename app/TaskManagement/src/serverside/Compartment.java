@@ -2,7 +2,7 @@ package serverside;
 
 import java.util.HashMap;
 
-public class Compartment extends Container {
+public class Compartment extends ServerContainer {
     double score;
     double outOf;
 

@@ -3,7 +3,7 @@ package serverside;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class AcademicContainer extends Container {
+public class AcademicContainer extends ServerContainer {
     String grade;
     double gradePercentage;
     HashMap<String, Double> classWeightedBreakdown;
