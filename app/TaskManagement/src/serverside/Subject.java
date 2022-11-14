@@ -5,5 +5,5 @@ public interface Subject {
 
 	public void removeObserver(Observer o);
 
-	public void notifyAllObservers(Container container);
+	public void notifyAllObservers(ServerContainer container);
 }

@@ -1,6 +1,6 @@
 package serverside;
 
-public class ProjectContainer extends Container {
+public class ProjectContainer extends ServerContainer {
 
     public ProjectContainer() {
     }

@@ -4,16 +4,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public abstract class Container {
+public abstract class ServerContainer {
     String containerName;
     List<Task> taskList;
     HashMap<String, Compartment> compartments;
     List<String> tags;
 
-    protected Container() {
+    protected ServerContainer() {
     }
 
-    protected Container(String name) {
+    protected ServerContainer(String name) {
         this.containerName = name;
     }
 

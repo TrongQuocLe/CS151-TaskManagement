@@ -22,7 +22,7 @@ public class SchoolWorkspace extends Workspace {
     }
 
     @Override
-    public Container createProjectContainer() {
+    public ServerContainer createProjectContainer() {
         ProjectContainer course = new ProjectContainer();
         return course;
     }
@@ -51,7 +51,7 @@ public class SchoolWorkspace extends Workspace {
 
         System.out.println(cs151.classWeightedBreakdown.toString());
         System.out.println(schoolSpace.containers);
-        Container test = schoolSpace.containers.get(0);
+        ServerContainer test = schoolSpace.containers.get(0);
         System.out.println(test.getTags());
         System.out.println(
                 cs151.compartments.get("Homework").compartments.get("Homework1").taskList.get(0).getTaskName());
