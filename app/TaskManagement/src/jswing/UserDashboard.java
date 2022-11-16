@@ -10,7 +10,7 @@ import javax.swing.JScrollPane;
 public class UserDashboard extends javax.swing.JFrame {
 	public UserDashboard() {
 		initComponents();
-		setResizable(false);
+		setResizable(true);
 	}
 
 	private void initComponents() {
@@ -63,7 +63,7 @@ public class UserDashboard extends javax.swing.JFrame {
 			}
 		});
 
-		userPicture1.setIcon(new javax.swing.ImageIcon(getClass().getResource("rsz_taskmanagementlogo.jpeg")));
+		userPicture1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/rsz_taskmanagementlogo.jpeg")));
 
 		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
 		jPanel1.setLayout(jPanel1Layout);
@@ -91,7 +91,7 @@ public class UserDashboard extends javax.swing.JFrame {
 
 		waterFallButton.setText("Water Fall");
 
-		jButton5.setText("Crum");
+		jButton5.setText("Scrum");
 
 		jTextField1.setText("Default");
 		jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -100,7 +100,7 @@ public class UserDashboard extends javax.swing.JFrame {
 			}
 		});
 
-//		userPicture.setIcon(new javax.swing.ImageIcon(getClass().getResource("rsz_userpicture.png"))); // NOI18N
+		userPicture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/rsz_userpicture.png"))); // NOI18N
 
 		javax.swing.GroupLayout headPanelLayout = new javax.swing.GroupLayout(headPanel);
 		headPanel.setLayout(headPanelLayout);

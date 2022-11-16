@@ -29,6 +29,8 @@ public class Task {
         COMPLETE
     }
 
+    public Task (){}
+
     public Task(String name) {
         this.taskName = name;
     }
