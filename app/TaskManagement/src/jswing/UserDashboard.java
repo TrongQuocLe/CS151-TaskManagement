@@ -1,391 +1,269 @@
 //ref: https://www.geeksforgeeks.org/java-swing-grouplayout-class/
 package jswing;
 
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
+import java.awt.*;
+import javax.swing.*;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 
 public class UserDashboard extends javax.swing.JFrame {
-	public UserDashboard() {
-		initComponents();
-		setResizable(true);
-	}
+    public UserDashboard() {
+        initComponents();
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setResizable(false);
+        pack();
+        setLocationRelativeTo(null);
+        setVisible(true);
+    }
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
 
-	private void initComponents() {
+        sidePanel = new javax.swing.JPanel();
+        accountButton = new javax.swing.JButton();
+        updatesButton = new javax.swing.JButton();
+        userPicture1 = new javax.swing.JLabel();
+        topPanel = new javax.swing.JPanel();
+        containerLocation = new javax.swing.JTextField();
+        addTaskButton = new javax.swing.JButton();
+        addTaskLabel = new javax.swing.JLabel();
+        addContainerButton = new javax.swing.JButton();
+        addContainerLabel = new javax.swing.JLabel();
+        bottomPanel = new javax.swing.JPanel();
+        containerDisplayPanel = new javax.swing.JPanel();
+        taskDisplayPanel = new javax.swing.JPanel();
 
-		jPanel1 = new javax.swing.JPanel();
-		searchButton = new javax.swing.JButton();
-		updatesButton = new javax.swing.JButton();
-		settingButton = new javax.swing.JButton();
-		userPicture1 = new javax.swing.JLabel();
-		headPanel = new javax.swing.JPanel();
-		waterFallButton = new javax.swing.JButton();
-		jButton5 = new javax.swing.JButton();
-		jTextField1 = new javax.swing.JTextField();
-		userPicture = new javax.swing.JLabel();
-		TaskDisplay = new javax.swing.JPanel();
-		notStartedPane = new javax.swing.JPanel();
-		notStartedHeadPane = new javax.swing.JPanel();
-		notStartedLabel = new javax.swing.JLabel();
-		addNotStartedTaskButton = new javax.swing.JButton();
-		inProgressPane = new javax.swing.JPanel();
-		inProgressHeadPane = new javax.swing.JPanel();
-		inProgressLabel = new javax.swing.JLabel();
-		addInProgressTaskButton = new javax.swing.JButton();
-		completedPane = new javax.swing.JPanel();
-		completedHeadPane = new javax.swing.JPanel();
-		completedLabel = new javax.swing.JLabel();
-		addCompletedTaskButton = new javax.swing.JButton();
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
 
-		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-		setBackground(new java.awt.Color(255, 255, 255));
+        accountButton.setText("Account");
+        accountButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                accountButtonActionPerformed(evt);
+            }
+        });
 
-		searchButton.setText("Search");
-		searchButton.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				searchButtonActionPerformed(evt);
-			}
-		});
+        updatesButton.setText("Settings");
+        updatesButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updatesButtonActionPerformed(evt);
+            }
+        });
 
-		updatesButton.setText("Settings");
-		updatesButton.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				updatesButtonActionPerformed(evt);
-			}
-		});
+        userPicture1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/rsz_taskmanagementlogo.jpeg"))); // NOI18N
 
-		settingButton.setText("Updates");
-		settingButton.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				settingButtonActionPerformed(evt);
-			}
-		});
+        javax.swing.GroupLayout sidePanelLayout = new javax.swing.GroupLayout(sidePanel);
+        sidePanel.setLayout(sidePanelLayout);
+        sidePanelLayout.setHorizontalGroup(
+            sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sidePanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(accountButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(updatesButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(sidePanelLayout.createSequentialGroup()
+                        .addComponent(userPicture1)
+                        .addGap(0, 15, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        sidePanelLayout.setVerticalGroup(
+            sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sidePanelLayout.createSequentialGroup()
+                .addComponent(userPicture1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(accountButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(updatesButton)
+                .addGap(68, 68, 68))
+        );
 
-		userPicture1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/rsz_taskmanagementlogo.jpeg")));
+        topPanel.setBackground(new java.awt.Color(255, 255, 255));
 
-		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-		jPanel1.setLayout(jPanel1Layout);
-		jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(jPanel1Layout.createSequentialGroup().addContainerGap()
-						.addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(searchButton, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(updatesButton, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(settingButton, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-						.addContainerGap())
-				.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-						.addContainerGap(23, Short.MAX_VALUE).addComponent(userPicture1).addGap(18, 18, 18)));
-		jPanel1Layout.setVerticalGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(jPanel1Layout.createSequentialGroup().addContainerGap().addComponent(userPicture1)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-						.addComponent(searchButton).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(settingButton).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(updatesButton)
-						.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+        containerLocation.setText("SJSU");
+        containerLocation.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        containerLocation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                containerLocationActionPerformed(evt);
+            }
+        });
 
-		headPanel.setBackground(new java.awt.Color(255, 255, 255));
+        addTaskButton.setText("+");
+        addTaskButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addTaskButtonActionPerformed(evt);
+            }
+        });
 
-		waterFallButton.setText("Water Fall");
+        addTaskLabel.setText("Add Task");
 
-		jButton5.setText("Scrum");
+        addContainerButton.setText("+");
+        addContainerButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addContainerButtonActionPerformed(evt);
+            }
+        });
 
-		jTextField1.setText("Default");
-		jTextField1.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				jTextField1ActionPerformed(evt);
-			}
-		});
+        addContainerLabel.setText("Add Container");
 
-		userPicture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/rsz_userpicture.png"))); // NOI18N
+        javax.swing.GroupLayout topPanelLayout = new javax.swing.GroupLayout(topPanel);
+        topPanel.setLayout(topPanelLayout);
+        topPanelLayout.setHorizontalGroup(
+            topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(topPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(topPanelLayout.createSequentialGroup()
+                        .addComponent(containerLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(1088, Short.MAX_VALUE))
+                    .addGroup(topPanelLayout.createSequentialGroup()
+                        .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(topPanelLayout.createSequentialGroup()
+                                .addComponent(addTaskButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(addTaskLabel))
+                            .addGroup(topPanelLayout.createSequentialGroup()
+                                .addComponent(addContainerButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(addContainerLabel)))
+                        .addGap(0, 0, Short.MAX_VALUE))))
+        );
+        topPanelLayout.setVerticalGroup(
+            topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(topPanelLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(containerLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(addContainerButton)
+                    .addComponent(addContainerLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(addTaskButton)
+                    .addComponent(addTaskLabel))
+                .addGap(33, 33, 33))
+        );
 
-		javax.swing.GroupLayout headPanelLayout = new javax.swing.GroupLayout(headPanel);
-		headPanel.setLayout(headPanelLayout);
-		headPanelLayout
-				.setHorizontalGroup(headPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(headPanelLayout.createSequentialGroup().addContainerGap()
-								.addGroup(headPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-										.addGroup(headPanelLayout.createSequentialGroup()
-												.addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 113,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-										.addGroup(headPanelLayout.createSequentialGroup().addComponent(waterFallButton)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-												.addComponent(jButton5)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addComponent(userPicture)))));
-		headPanelLayout
-				.setVerticalGroup(headPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headPanelLayout.createSequentialGroup()
-								.addGroup(headPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-										.addGroup(headPanelLayout.createSequentialGroup()
-												.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addGroup(headPanelLayout
-														.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-														.addComponent(waterFallButton).addComponent(jButton5)))
-										.addGroup(headPanelLayout.createSequentialGroup().addComponent(userPicture)
-												.addGap(0, 12, Short.MAX_VALUE)))
-								.addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 33,
-										javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addContainerGap()));
+        containerDisplayPanel.setBackground(new java.awt.Color(255, 255, 255));
 
-		TaskDisplay.setBackground(new java.awt.Color(255, 255, 255));
-		TaskDisplay.setLayout(new javax.swing.BoxLayout(TaskDisplay, javax.swing.BoxLayout.LINE_AXIS));
+        javax.swing.GroupLayout containerDisplayPanelLayout = new javax.swing.GroupLayout(containerDisplayPanel);
+        containerDisplayPanel.setLayout(containerDisplayPanelLayout);
+        containerDisplayPanelLayout.setHorizontalGroup(
+            containerDisplayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1207, Short.MAX_VALUE)
+        );
+        containerDisplayPanelLayout.setVerticalGroup(
+            containerDisplayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 444, Short.MAX_VALUE)
+        );
 
-		notStartedPane.setBackground(new java.awt.Color(255, 255, 255));
-		notStartedPane.setToolTipText("");
-		notStartedPane.setPreferredSize(new java.awt.Dimension(200, 319));
+        taskDisplayPanel.setBackground(new java.awt.Color(255, 255, 255));
 
-		notStartedLabel.setText("Not Started");
+        javax.swing.GroupLayout taskDisplayPanelLayout = new javax.swing.GroupLayout(taskDisplayPanel);
+        taskDisplayPanel.setLayout(taskDisplayPanelLayout);
+        taskDisplayPanelLayout.setHorizontalGroup(
+            taskDisplayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        taskDisplayPanelLayout.setVerticalGroup(
+            taskDisplayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 230, Short.MAX_VALUE)
+        );
 
-		addNotStartedTaskButton.setText("+");
-		addNotStartedTaskButton.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				addNotStartedTaskButtonActionPerformed(evt);
-			}
-		});
+        javax.swing.GroupLayout bottomPanelLayout = new javax.swing.GroupLayout(bottomPanel);
+        bottomPanel.setLayout(bottomPanelLayout);
+        bottomPanelLayout.setHorizontalGroup(
+            bottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(containerDisplayPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(taskDisplayPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        bottomPanelLayout.setVerticalGroup(
+            bottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bottomPanelLayout.createSequentialGroup()
+                .addComponent(containerDisplayPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(taskDisplayPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
-		javax.swing.GroupLayout notStartedHeadPaneLayout = new javax.swing.GroupLayout(notStartedHeadPane);
-		notStartedHeadPane.setLayout(notStartedHeadPaneLayout);
-		notStartedHeadPaneLayout.setHorizontalGroup(
-				notStartedHeadPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(notStartedHeadPaneLayout.createSequentialGroup().addContainerGap()
-								.addGroup(notStartedHeadPaneLayout
-										.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-										.addComponent(addNotStartedTaskButton).addComponent(notStartedLabel,
-												javax.swing.GroupLayout.PREFERRED_SIZE, 80,
-												javax.swing.GroupLayout.PREFERRED_SIZE))
-								.addContainerGap(102, Short.MAX_VALUE)));
-		notStartedHeadPaneLayout.setVerticalGroup(
-				notStartedHeadPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(notStartedHeadPaneLayout.createSequentialGroup().addContainerGap()
-								.addComponent(notStartedLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 17,
-										javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-								.addComponent(addNotStartedTaskButton)
-								.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(sidePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(bottomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(topPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(sidePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(topPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 129, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bottomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
 
-		javax.swing.GroupLayout notStartedPaneLayout = new javax.swing.GroupLayout(notStartedPane);
-		notStartedPane.setLayout(notStartedPaneLayout);
-		notStartedPaneLayout
-				.setHorizontalGroup(
-						notStartedPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addGroup(notStartedPaneLayout.createSequentialGroup().addContainerGap()
-										.addComponent(notStartedHeadPane, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addContainerGap()));
-		notStartedPaneLayout
-				.setVerticalGroup(notStartedPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(notStartedPaneLayout.createSequentialGroup().addContainerGap()
-								.addComponent(notStartedHeadPane, javax.swing.GroupLayout.PREFERRED_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addContainerGap(255, Short.MAX_VALUE)));
+        pack();
+    }// </editor-fold>                        
 
-		TaskDisplay.add(notStartedPane);
+    private void accountButtonActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        // TODO add your handling code here:
+    }                                             
 
-		inProgressPane.setBackground(new java.awt.Color(255, 255, 255));
-		inProgressPane.setPreferredSize(new java.awt.Dimension(200, 319));
+    private void updatesButtonActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        // TODO add your handling code here:
+    }                                             
 
-		inProgressLabel.setText("In Progress");
+    private void containerLocationActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+        // TODO add your handling code here:
+    }                                                 
 
-		addInProgressTaskButton.setText("+");
-		addInProgressTaskButton.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				addInProgressTaskButtonActionPerformed(evt);
-			}
-		});
+    private void addContainerButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+        JPanel content = new JPanel(new GridBagLayout());
+        containerDisplayPanel.add(new JScrollPane(content));
+        ContainerPanel panel = new ContainerPanel();
+        int insertAt = Math.max(0, content.getComponentCount() - 1);
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridwidth = GridBagConstraints.REMAINDER;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.weightx = 1;
+        content.add(panel,gbc,insertAt);
+        content.revalidate();
+        content.repaint();
+//        JOptionPane.showMessageDialog(rootPane, "add container in containerDisplayPanel");
 
-		javax.swing.GroupLayout inProgressHeadPaneLayout = new javax.swing.GroupLayout(inProgressHeadPane);
-		inProgressHeadPane.setLayout(inProgressHeadPaneLayout);
-		inProgressHeadPaneLayout.setHorizontalGroup(
-				inProgressHeadPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(inProgressHeadPaneLayout.createSequentialGroup().addContainerGap()
-								.addGroup(inProgressHeadPaneLayout
-										.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-										.addComponent(addInProgressTaskButton).addComponent(inProgressLabel,
-												javax.swing.GroupLayout.PREFERRED_SIZE, 80,
-												javax.swing.GroupLayout.PREFERRED_SIZE))
-								.addContainerGap(102, Short.MAX_VALUE)));
-		inProgressHeadPaneLayout.setVerticalGroup(
-				inProgressHeadPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(inProgressHeadPaneLayout.createSequentialGroup().addContainerGap()
-								.addComponent(inProgressLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 17,
-										javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-								.addComponent(addInProgressTaskButton)
-								.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+    }                                                  
 
-		javax.swing.GroupLayout inProgressPaneLayout = new javax.swing.GroupLayout(inProgressPane);
-		inProgressPane.setLayout(inProgressPaneLayout);
-		inProgressPaneLayout
-				.setHorizontalGroup(
-						inProgressPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addGroup(inProgressPaneLayout.createSequentialGroup().addContainerGap()
-										.addComponent(inProgressHeadPane, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addContainerGap()));
-		inProgressPaneLayout
-				.setVerticalGroup(inProgressPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(inProgressPaneLayout.createSequentialGroup().addContainerGap()
-								.addComponent(inProgressHeadPane, javax.swing.GroupLayout.PREFERRED_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addContainerGap(255, Short.MAX_VALUE)));
+    private void addTaskButtonActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        JOptionPane.showMessageDialog(rootPane, "add task in taskDisplayPanel");
+    }                                             
 
-		TaskDisplay.add(inProgressPane);
+    public static void main(String args[]) {
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new UserDashboard().setVisible(true);
+                
+            }
+        });
+    }
 
-		completedPane.setBackground(new java.awt.Color(255, 255, 255));
-		completedPane.setPreferredSize(new java.awt.Dimension(200, 319));
-
-		completedLabel.setText("Completed");
-
-		addCompletedTaskButton.setText("+");
-		addCompletedTaskButton.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				addCompletedTaskButtonActionPerformed(evt);
-			}
-		});
-
-		javax.swing.GroupLayout completedHeadPaneLayout = new javax.swing.GroupLayout(completedHeadPane);
-		completedHeadPane.setLayout(completedHeadPaneLayout);
-		completedHeadPaneLayout.setHorizontalGroup(completedHeadPaneLayout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(completedHeadPaneLayout.createSequentialGroup().addContainerGap()
-						.addGroup(completedHeadPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(completedLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 80,
-										javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addComponent(addCompletedTaskButton))
-						.addContainerGap(118, Short.MAX_VALUE)));
-		completedHeadPaneLayout
-				.setVerticalGroup(completedHeadPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(completedHeadPaneLayout.createSequentialGroup().addContainerGap()
-								.addComponent(completedLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 17,
-										javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-								.addComponent(addCompletedTaskButton)
-								.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
-
-		javax.swing.GroupLayout completedPaneLayout = new javax.swing.GroupLayout(completedPane);
-		completedPane.setLayout(completedPaneLayout);
-		completedPaneLayout
-				.setHorizontalGroup(completedPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(completedPaneLayout.createSequentialGroup().addContainerGap()
-								.addComponent(completedHeadPane, javax.swing.GroupLayout.PREFERRED_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
-		completedPaneLayout
-				.setVerticalGroup(completedPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(completedPaneLayout.createSequentialGroup().addContainerGap()
-								.addComponent(completedHeadPane, javax.swing.GroupLayout.PREFERRED_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addContainerGap(255, Short.MAX_VALUE)));
-
-		TaskDisplay.add(completedPane);
-
-		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-		getContentPane().setLayout(layout);
-		layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout
-				.createSequentialGroup()
-				.addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-						javax.swing.GroupLayout.PREFERRED_SIZE)
-				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(layout.createSequentialGroup().addGap(0, 0, Short.MAX_VALUE).addComponent(TaskDisplay,
-								javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addComponent(headPanel, javax.swing.GroupLayout.DEFAULT_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-				.addContainerGap()));
-		layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-						Short.MAX_VALUE)
-				.addGroup(layout.createSequentialGroup().addContainerGap()
-						.addComponent(headPanel, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(TaskDisplay, javax.swing.GroupLayout.DEFAULT_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addContainerGap()));
-
-		pack();
-	}// </editor-fold>
-
-	private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
-	}
-
-	private void updatesButtonActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
-	}
-
-	private void settingButtonActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
-	}
-
-	private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
-	}
-//ref: https://stackoverflow.com/questions/28800777/use-a-jbutton-to-add-new-panels-at-runtime
-	private void addNotStartedTaskButtonActionPerformed(java.awt.event.ActionEvent evt) {
-		JPanel content = new JPanel(new GridBagLayout());
-		GridBagConstraints gbc = new GridBagConstraints();
-		gbc.gridwidth = GridBagConstraints.REMAINDER;
-		gbc.weighty = 1;
-		content.add(new JPanel(), gbc);
-		notStartedPane.add(new JScrollPane(content));
-		TaskPane newTaskPane = new TaskPane();
-		int insertAt = Math.max(0, content.getComponentCount() - 1);
-		GridBagConstraints gbcTask = new GridBagConstraints();
-		gbcTask.gridwidth = GridBagConstraints.REMAINDER;
-		gbcTask.fill = GridBagConstraints.HORIZONTAL;
-		gbcTask.weightx = 1;
-		content.add(newTaskPane, gbcTask, insertAt);
-		content.revalidate();
-		content.repaint();
-		notStartedPane.add(newTaskPane);
-	}
-
-	private void addInProgressTaskButtonActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
-	}
-
-	private void addCompletedTaskButtonActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
-	}
-
-	public static void main(String args[]) {
-		/* Create and display the form */
-		java.awt.EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				new UserDashboard().setVisible(true);
-			}
-		});
-	}
-
-	private javax.swing.JPanel TaskDisplay;
-	private javax.swing.JButton addCompletedTaskButton;
-	private javax.swing.JButton addInProgressTaskButton;
-	private javax.swing.JButton addNotStartedTaskButton;
-	private javax.swing.JPanel completedHeadPane;
-	private javax.swing.JLabel completedLabel;
-	private javax.swing.JPanel completedPane;
-	private javax.swing.JPanel headPanel;
-	private javax.swing.JPanel inProgressHeadPane;
-	private javax.swing.JLabel inProgressLabel;
-	private javax.swing.JPanel inProgressPane;
-	private javax.swing.JButton jButton5;
-	private javax.swing.JPanel jPanel1;
-	private javax.swing.JTextField jTextField1;
-	private javax.swing.JPanel notStartedHeadPane;
-	private javax.swing.JLabel notStartedLabel;
-	private javax.swing.JPanel notStartedPane;
-	private javax.swing.JButton searchButton;
-	private javax.swing.JButton settingButton;
-	private javax.swing.JButton updatesButton;
-	private javax.swing.JLabel userPicture;
-	private javax.swing.JLabel userPicture1;
-	private javax.swing.JButton waterFallButton;
-
+    // Variables declaration - do not modify                     
+    private javax.swing.JButton accountButton;
+    private javax.swing.JButton addContainerButton;
+    private javax.swing.JLabel addContainerLabel;
+    private javax.swing.JButton addTaskButton;
+    private javax.swing.JLabel addTaskLabel;
+    private javax.swing.JPanel bottomPanel;
+    private javax.swing.JPanel containerDisplayPanel;
+    private javax.swing.JTextField containerLocation;
+    private javax.swing.JPanel sidePanel;
+    private javax.swing.JPanel taskDisplayPanel;
+    private javax.swing.JPanel topPanel;
+    private javax.swing.JButton updatesButton;
+    private javax.swing.JLabel userPicture1;
+    // End of variables declaration                   
 }
