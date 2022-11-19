@@ -1,21 +1,24 @@
 package serverside.Exceptions;
 
+import java.util.Arrays;
+
 public class PasswordValidation {
     public PasswordValidation() {
     }
 
     // A utility function to check
     // whether a password is valid or not
-    public static void validate(String password) throws PasswordException {
+    public static void validate(char[] password) throws PasswordException {
+        String strpassword = String.valueOf(password);
         // for checking if password length
         // is between 8 and 15
-        if (!((password.length() >= 8)
-                && (password.length() <= 15))) {
+        if (!((password.length >= 8)
+                && (password.length <= 15))) {
             throw new Minimum8CharactersRequired();
         }
 
         // to check space
-        if (password.contains(" ")) {
+        if (strpassword.contains(" ")) {
             throw new WhiteSpaceCheck();
         }
         if (true) {
@@ -27,7 +30,7 @@ public class PasswordValidation {
                 // to convert int to string
                 String str1 = Integer.toString(i);
 
-                if (password.contains(str1)) {
+                if (strpassword.contains(str1)) {
                     count = 1;
                 }
             }
@@ -37,17 +40,17 @@ public class PasswordValidation {
         }
 
         // for special characters
-        if (!(password.contains("@") || password.contains("#")
-                || password.contains("!") || password.contains("~")
-                || password.contains("$") || password.contains("%")
-                || password.contains("^") || password.contains("&")
-                || password.contains("*") || password.contains("(")
-                || password.contains(")") || password.contains("-")
-                || password.contains("+") || password.contains("/")
-                || password.contains(":") || password.contains(".")
-                || password.contains(", ") || password.contains("<")
-                || password.contains(">") || password.contains("?")
-                || password.contains("|"))) {
+        if (!(strpassword.contains("@") || strpassword.contains("#")
+                || strpassword.contains("!") || strpassword.contains("~")
+                || strpassword.contains("$") || strpassword.contains("%")
+                || strpassword.contains("^") || strpassword.contains("&")
+                || strpassword.contains("*") || strpassword.contains("(")
+                || strpassword.contains(")") || strpassword.contains("-")
+                || strpassword.contains("+") || strpassword.contains("/")
+                || strpassword.contains(":") || strpassword.contains(".")
+                || strpassword.contains(", ") || strpassword.contains("<")
+                || strpassword.contains(">") || strpassword.contains("?")
+                || strpassword.contains("|"))) {
             throw new SpecialCharacterMissing();
         }
 
@@ -61,7 +64,7 @@ public class PasswordValidation {
                 char c = (char) i;
 
                 String str1 = Character.toString(c);
-                if (password.contains(str1)) {
+                if (strpassword.contains(str1)) {
                     count = 1;
                 }
             }
@@ -80,7 +83,7 @@ public class PasswordValidation {
                 char c = (char) i;
                 String str1 = Character.toString(c);
 
-                if (password.contains(str1)) {
+                if (strpassword.contains(str1)) {
                     count = 1;
                 }
             }
@@ -95,20 +98,22 @@ public class PasswordValidation {
     // Driver code
     public static void main(String[] args) {
         String password1 = "123sebasKyle";
+        char[] charpassword1 = password1.toCharArray();
         try {
             System.out.println("Is Password "
                     + password1 + " valid?");
-            validate(password1);
+            validate(charpassword1);
             System.out.println("Valid Password");
         } catch (PasswordException e) {
             System.out.print(e.getMessage());
             System.out.println(e.printMessage());
         }
         String password2 = "Geek007@GFG";
+        char[] charpassword2 = password2.toCharArray();
         try {
             System.out.println("\nIs Password "
                     + password2 + " valid?");
-            validate(password2);
+            validate(charpassword2);
             System.out.println("Valid Password");
         } catch (PasswordException e) {
             System.out.print(e.getMessage());
