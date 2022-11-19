@@ -13,60 +13,26 @@ public class User {
     private String firstName;
     private String lastName;
     private String userID;
-    private String password;
+    private char[] password;
     private String email;
     private String username;
-    private ArrayList<Workspace> workspaces;
+    // private ArrayList<Workspace> workspaces;
 
     // // Default Constructor
     // public User(){
     // }
 
     // Parameterized Constructor to Create new User
-    public User(String email, String password, String firstName, String lastName, String username) {
-        validateEmail(email);
-        validatePassword(password);
+    public User(String firstName, String lastName, String username, String email, char[] password) {
         this.firstName = firstName;
         this.lastName = lastName;
-        getUserFullName();
         this.userID = UserDatabase.generateUniqueID(firstName, lastName);
         this.username = username;
-    }
-    // public String toString(){//overriding the toString() method
-    // return rollno+" "+name+" "+city;
-    // }
-
-    // Validate password. I want this to be handled here before it gets saved into
-    // the database
-    public void validatePassword(String password) {
-        try {
-            PasswordValidation.validate(password);
-            // System.out.println("Valid Password");
-            this.password = password;
-        } catch (PasswordException e) {
-            System.out.print(e.getMessage());
-            System.out.println(e.printMessage());
-        }
-    }
-
-    // Validates the email:
-    public void validateEmail(String email) {
-        try {
-            EmailValidation.validate(email);
-            // System.out.println("Valid Email");
-            this.email = email;
-        } catch (EmailException e) {
-            System.out.print(e.getMessage());
-        }
-    }
-
-    // Change Password Method
-    public void changePassword(String password) {
-        validatePassword(password);
+        this.password = password;
     }
 
     // Shows current password
-    public String getPassword() {
+    public char[] getPassword() {
         return this.password;
     }
 
@@ -85,14 +51,15 @@ public class User {
         return this.firstName + this.lastName;
     }
 
-    // Create Workspace
-    public void createWorkSpace(String name) {
-        Workspace newWorkspace = new SchoolWorkspace();
-        workspaces.add(newWorkspace);
-    }
+    // // Create Workspace
+    // public void createWorkSpace(String name) {
+    // Workspace newWorkspace = new SchoolWorkspace();
+    // workspaces.add(newWorkspace);
+    // }
 
     public static void main(String[] args) {
-        User kyle = new User("lo7kyle@gmail.com", "123$%SebasKyle", "Kyle", "Lo", "blakeawk1234");
+        char[] password = { 'b', 'l', 'a', 'k', 'a', 'w', 'k', '1', '2', '3', '4' };
+        User kyle = new User("lo7kyle@gmail.com", "123$%SebasKyle", "Kyle", "Lo", password);
         System.out.println(kyle.getUserEmail());
         System.out.println(kyle.getPassword());
         System.out.println(kyle.getUserID());

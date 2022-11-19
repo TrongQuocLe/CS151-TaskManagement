@@ -57,7 +57,8 @@ public abstract class Workspace implements Subject {
 
     // Main method for debugging purposes only
     public static void main(String[] args) {
-        User kyle = new User("lo7kyle@gmail.com", "123$%SebasKyle", "Kyle", "Lo", "blakeawk1234");
+        char[] password = { 'a', 'b', 'c', 1, 2, 3 };
+        User kyle = new User("lo7kyle@gmail.com", "123$%SebasKyle", "Kyle", "Lo", password);
         System.out.println(kyle.getUserEmail());
 
     }
