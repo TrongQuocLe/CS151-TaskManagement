@@ -11,6 +11,8 @@ import org.jdesktop.animation.timing.Animator;
 import org.jdesktop.animation.timing.TimingTargetAdapter;
 import org.jdesktop.animation.timing.interpolation.PropertySetter;
 
+import jswing.event.EventLogin;
+
 /**
  *
  * @author Admin

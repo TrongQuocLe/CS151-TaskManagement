@@ -4,6 +4,7 @@ import java.util.Arrays;
 import jswing.Button;
 import jswing.Password;
 import jswing.TextField;
+import jswing.event.EventLogin;
 import serverside.User;
 import serverside.UserDatabase;
 
