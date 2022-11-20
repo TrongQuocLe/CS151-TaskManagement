@@ -1,4 +1,4 @@
-package jswing.Login;
+package jswing.event;
 
 public interface EventLogin {
 
