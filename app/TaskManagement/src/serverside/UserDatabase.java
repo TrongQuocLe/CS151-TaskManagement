@@ -6,12 +6,6 @@ import java.util.HashMap;
 import java.util.Objects;
 import java.util.Collections;
 
-import java.util.List;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Objects;
-import java.util.Collections;
-
 public class UserDatabase {
     // we use this class variable to count how many times this object was
     // instantiated
