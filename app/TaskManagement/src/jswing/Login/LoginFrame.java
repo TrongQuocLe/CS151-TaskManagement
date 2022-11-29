@@ -332,9 +332,33 @@ public class LoginFrame extends javax.swing.JFrame {
                 }
         }
 
+        // after 3 attempts, button.setEnable(True), waitTime = totalAttempt / 3 * 5 second 
+        // if time at disable + waitTime < time now, button.setEnable(false)
+        int attemptsLeft = 3;
+        int totalAttempts = 0;
+        long waitTime = totalAttempts / 3 * 5000;
+        long startTime, endTime;
+
+        private void loginCheck() {
+                endTime = System.currentTimeMillis();
+                if (attemptsLeft == 0) {
+                        button1.setEnabled(false);
+                        startTime = System.currentTimeMillis();
+                }
+
+                if (waitTime + startTime < endTime ) {
+                        button1.setEnabled(true);
+                        attemptsLeft = 3;
+                }
+        }
+
         private void button1ActionPerformed(java.awt.event.ActionEvent evt) {
                 // TODO add your handling code here:
                 // Create a counter to prevent log in spam
+                attemptsLeft--;
+                totalAttempts++;
+                loginCheck();
+                
                 String email = textField2.getText();
                 char[] password = password1.getPassword();
                 UserDatabase database = UserDatabase.getInstance();
