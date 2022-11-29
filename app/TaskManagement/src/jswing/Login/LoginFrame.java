@@ -2,8 +2,6 @@
 package jswing.Login;
 
 import java.util.Arrays;
-import java.time.LocalTime;
-
 import jswing.Button;
 import jswing.Password;
 import jswing.TextField;
