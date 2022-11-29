@@ -586,12 +586,13 @@ public class Register extends PanelCustom {
                 String email = textField4.getText();
                 UserDatabase database = UserDatabase.getInstance();
                 User newUser = new User(firstName, lastName, username, email, password2.getPassword());
-                database.saveUser(username, newUser);
-                database.saveUsername(username);
+                UserDatabase.saveUser(email, newUser);
+                UserDatabase.saveUsername(username);
 
                 clearPanelValues();
                 jLabel6.setText("Account Successfully Created");
                 jLabel7.setText("You can Log in");
+                setButtonFalse();
         }
 
         private void textField4KeyReleased(java.awt.event.KeyEvent evt) {
@@ -613,7 +614,7 @@ public class Register extends PanelCustom {
                                 jLabel8.setText("Invalid Email");
                                 jLabel7.setText(e.getMessage());
                         }
-                        if (database.checkEmailExist(emailStr)) {
+                        if (UserDatabase.checkEmailExist(emailStr)) {
                                 jLabel8.setForeground(new java.awt.Color(255, 102, 102));
                                 jLabel8.setText("Invalid Email");
                                 jLabel7.setText("Email already exsists");

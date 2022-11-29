@@ -607,12 +607,13 @@ public class RegisterFrame extends javax.swing.JFrame {
                 String email = textField4.getText();
                 UserDatabase database = UserDatabase.getInstance();
                 User newUser = new User(firstName, lastName, username, email, password2.getPassword());
-                database.saveUser(username, newUser);
+                database.saveUser(email, newUser);
                 database.saveUsername(username);
 
                 clearPanelValues();
                 jLabel6.setText("Account Successfully Created");
                 jLabel7.setText("You can Log in");
+                setButtonFalse();
         }
 
         private void textField4KeyReleased(java.awt.event.KeyEvent evt) {

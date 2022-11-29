@@ -1,7 +1,8 @@
 package jswing.Login;
 
-import java.awt.Color;
 import java.awt.Component;
+import java.awt.Color;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JComponent;
@@ -10,14 +11,11 @@ import net.miginfocom.swing.MigLayout;
 import org.jdesktop.animation.timing.Animator;
 import org.jdesktop.animation.timing.TimingTargetAdapter;
 import org.jdesktop.animation.timing.interpolation.PropertySetter;
+import javax.swing.JPanel;
 
 import jswing.event.EventLogin;
 
-/**
- *
- * @author Admin
- */
-public class LoginAndRegister extends javax.swing.JPanel {
+public class LoginAndRegister extends JPanel {
 
     private MigLayout layout;
     private Register register;
@@ -40,6 +38,8 @@ public class LoginAndRegister extends javax.swing.JPanel {
     }
 
     public LoginAndRegister() {
+        setOpaque(false);
+        super.setBackground(Color.WHITE);
         initComponents();
         init();
         initAnimator();
@@ -63,7 +63,6 @@ public class LoginAndRegister extends javax.swing.JPanel {
     }
 
     private void init() {
-        setBackground(mainColor);
         layout = new MigLayout("fill", "fill", "fill");
         setLayout(layout);
         register = new Register();

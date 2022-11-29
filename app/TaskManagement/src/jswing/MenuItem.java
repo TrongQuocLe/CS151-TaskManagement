@@ -140,7 +140,7 @@ public class MenuItem extends javax.swing.JPanel {
     private void createArrowButton(Graphics2D g2) {
         int size = 4;
         int y = 19;
-        int x = 325;
+        int x = 250;
         g2.setColor(new Color(230, 230, 230));
         float ay = alpha * size;
         float ay1 = (1f - alpha) * size;

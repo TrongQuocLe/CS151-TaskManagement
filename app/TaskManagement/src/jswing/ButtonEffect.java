@@ -16,7 +16,7 @@ import org.jdesktop.animation.timing.Animator;
 import org.jdesktop.animation.timing.TimingTarget;
 import org.jdesktop.animation.timing.TimingTargetAdapter;
 
-public class HamburgerButton extends JButton {
+public class ButtonEffect extends JButton {
 
     public Color getEffectColor() {
         return effectColor;
@@ -33,7 +33,7 @@ public class HamburgerButton extends JButton {
     private float alpha;
     private Color effectColor = new Color(173, 173, 173);
 
-    public HamburgerButton() {
+    public ButtonEffect() {
         setContentAreaFilled(false);
         setBorder(new EmptyBorder(5, 5, 5, 5));
         setBackground(new Color(40, 40, 40));
@@ -77,8 +77,7 @@ public class HamburgerButton extends JButton {
         if (pressedPoint != null) {
             g2.setColor(effectColor);
             g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_ATOP, alpha));
-            g2.fillOval((int) (pressedPoint.x - animatSize / 2), (int) (pressedPoint.y - animatSize / 2),
-                    (int) animatSize, (int) animatSize);
+            g2.fillOval((int) (pressedPoint.x - animatSize / 2), (int) (pressedPoint.y - animatSize / 2), (int) animatSize, (int) animatSize);
         }
         g2.dispose();
         grphcs.drawImage(img, 0, 0, null);

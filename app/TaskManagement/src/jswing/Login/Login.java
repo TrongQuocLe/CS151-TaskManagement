@@ -314,9 +314,6 @@ public class Login extends PanelCustom {
                         jLabel7.setForeground(new java.awt.Color(255, 102, 102));
                         jLabel7.setText("Email/User does not exist");
                 }
-                if (getAlpha() == 0) {
-                        event.loginDone();
-                }
         }
 
         private void textField2ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -343,6 +340,7 @@ public class Login extends PanelCustom {
                         jLabel7.setForeground(new java.awt.Color(102, 255, 102));
                         jLabel7.setText("Login Successful");
                         button1.setEnabled(false);
+                        event.loginDone();
                         // Close both register and login panels and open up another panel in the
                         // mainframe
 
