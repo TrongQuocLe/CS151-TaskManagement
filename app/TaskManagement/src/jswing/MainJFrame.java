@@ -64,7 +64,8 @@ public class MainJFrame extends javax.swing.JFrame {
                 }
                 if (menuIndex == 3) {
                     if (subMenuIndex == 0) {
-                        System.out.println("Workspace Selected");
+                        System.out.println("Create new Workspace Selected");
+                        main.showForm(new CreateWorkspaceForm());
                     } else if (subMenuIndex == 1) {
                         main.showForm(new LoginAndRegister());
                     }
