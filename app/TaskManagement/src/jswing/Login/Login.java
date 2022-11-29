@@ -341,8 +341,6 @@ public class Login extends PanelCustom {
                         jLabel7.setText("Login Successful");
                         button1.setEnabled(false);
                         event.loginDone();
-                        // Close both register and login panels and open up another panel in the
-                        // mainframe
 
                 } else {
                         jLabel7.setForeground(new java.awt.Color(255, 102, 102));
