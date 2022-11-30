@@ -59,7 +59,7 @@ public class TableDark extends JTable {
 
     public void addRow(Vector row) {
         DefaultTableModel mod = (DefaultTableModel) getModel();
-        mod.addRow(row);
+        mod.insertRow(0, row);
     }
 
     public void deleteRow() {

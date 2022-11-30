@@ -134,9 +134,14 @@ public class HomeForm extends javax.swing.JPanel {
                                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE))
                                                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE,
                                                                                 Short.MAX_VALUE))
-                                                .addComponent(noticeBoard1, javax.swing.GroupLayout.Alignment.TRAILING,
-                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout
+                                                                .createSequentialGroup()
+                                                                .addGap(27, 27, 27)
+                                                                .addComponent(noticeBoard1,
+                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                Short.MAX_VALUE)
+                                                                .addGap(27, 27, 27)));
                 jPanel1Layout.setVerticalGroup(
                                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout
@@ -150,13 +155,12 @@ public class HomeForm extends javax.swing.JPanel {
                                                                                 41,
                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                 .addPreferredGap(
-                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                                javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                                 .addComponent(noticeBoard1,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                511,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                Short.MAX_VALUE)));
+                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                Short.MAX_VALUE)
+                                                                .addGap(27, 27, 27)));
 
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
                 this.setLayout(layout);
@@ -165,8 +169,7 @@ public class HomeForm extends javax.swing.JPanel {
                                                 .addGroup(layout.createSequentialGroup()
                                                                 .addGap(16, 16, 16)
                                                                 .addComponent(jLabel1)
-                                                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                Short.MAX_VALUE))
+                                                                .addContainerGap())
                                                 .addGroup(layout.createSequentialGroup()
                                                                 .addGap(20, 20, 20)
                                                                 .addGroup(layout.createParallelGroup(
@@ -174,37 +177,35 @@ public class HomeForm extends javax.swing.JPanel {
                                                                                 .addGroup(layout.createSequentialGroup()
                                                                                                 .addComponent(card1,
                                                                                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                                281,
+                                                                                                                308,
                                                                                                                 Short.MAX_VALUE)
-                                                                                                .addGap(18, 18, 18)
+                                                                                                .addGap(32, 32, 32)
                                                                                                 .addComponent(card2,
                                                                                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                                288,
+                                                                                                                309,
                                                                                                                 Short.MAX_VALUE))
                                                                                 .addComponent(tabbedNotes1,
                                                                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
                                                                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
                                                                                                 Short.MAX_VALUE))
-                                                                .addGap(18, 18, 18)
+                                                                .addGap(50, 50, 50)
                                                                 .addGroup(layout.createParallelGroup(
-                                                                                javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                                javax.swing.GroupLayout.Alignment.LEADING)
                                                                                 .addGroup(layout.createSequentialGroup()
                                                                                                 .addComponent(card3,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                277,
+                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                                323,
                                                                                                                 Short.MAX_VALUE)
-                                                                                                .addGap(18, 18, 18)
+                                                                                                .addGap(39, 39, 39)
                                                                                                 .addComponent(card4,
                                                                                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                                270,
+                                                                                                                297,
                                                                                                                 Short.MAX_VALUE))
-                                                                                .addGroup(layout.createSequentialGroup()
-                                                                                                .addGap(6, 6, 6)
-                                                                                                .addComponent(jPanel1,
-                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                                Short.MAX_VALUE)))
-                                                                .addGap(32, 32, 32)));
+                                                                                .addComponent(jPanel1,
+                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                Short.MAX_VALUE))
+                                                                .addGap(41, 41, 41)));
                 layout.setVerticalGroup(
                                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addGroup(layout.createSequentialGroup()
@@ -215,33 +216,32 @@ public class HomeForm extends javax.swing.JPanel {
                                                                 .addGroup(layout.createParallelGroup(
                                                                                 javax.swing.GroupLayout.Alignment.LEADING,
                                                                                 false)
-                                                                                .addComponent(card4,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                0, Short.MAX_VALUE)
-                                                                                .addComponent(card3,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                0, Short.MAX_VALUE)
-                                                                                .addComponent(card2,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                142,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                                 .addComponent(card1,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                0, Short.MAX_VALUE))
-                                                                .addGap(18, 18, 18)
-                                                                .addGroup(layout.createParallelGroup(
-                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                .addComponent(tabbedNotes1,
                                                                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
                                                                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
                                                                                                 Short.MAX_VALUE)
-                                                                                .addGroup(layout.createSequentialGroup()
-                                                                                                .addComponent(jPanel1,
-                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                                Short.MAX_VALUE)
-                                                                                                .addGap(9, 9, 9)))
-                                                                .addGap(105, 105, 105)));
+                                                                                .addComponent(card2,
+                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                171, Short.MAX_VALUE)
+                                                                                .addComponent(card3,
+                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                Short.MAX_VALUE)
+                                                                                .addComponent(card4,
+                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                Short.MAX_VALUE))
+                                                                .addGap(47, 47, 47)
+                                                                .addGroup(layout.createParallelGroup(
+                                                                                javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                .addComponent(jPanel1,
+                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                Short.MAX_VALUE)
+                                                                                .addComponent(tabbedNotes1,
+                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                620, Short.MAX_VALUE))
+                                                                .addGap(66, 66, 66)));
         }// </editor-fold>
 
         // Variables declaration - do not modify//GEN-BEGIN:variables

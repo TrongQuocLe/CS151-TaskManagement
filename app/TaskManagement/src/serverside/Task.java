@@ -3,6 +3,7 @@ package serverside;
 import java.util.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.text.DateFormat;
 
 public class Task {
     private String taskName;
@@ -118,16 +119,16 @@ public class Task {
         this.actualHours = actualHours;
     }
 
-    public Date getStartDate() {
-        return this.startDate;
+    public String getStartDate() {
+        return getStringDate(this.startDate);
     }
 
     public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
 
-    public Date getEndDate() {
-        return this.endDate;
+    public String getEndDate() {
+        return getStringDate(this.endDate);
     }
 
     public void setEndDate(Date endDate) {
@@ -142,21 +143,27 @@ public class Task {
         this.dependencies = dependencies;
     }
 
-    public Priority getPriority() {
-        return this.priority;
+    public String getPriority() {
+        return this.priority.name();
     }
 
     public void setPriority(String priority) {
         this.priority = Priority.valueOf(priority.toUpperCase());
     }
 
-    public Status getStatus() {
-        return this.status;
+    public String getStatus() {
+        return this.status.name();
     }
 
     public void setStatus(String status) {
         status = status.replaceAll(" ", "");
         this.status = Status.valueOf(status.toUpperCase());
+    }
+
+    public String getStringDate(Date date) {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
+        String strDate = dateFormat.format(date);
+        return strDate;
     }
 
     public static void main(String[] args) throws Exception {
@@ -168,6 +175,5 @@ public class Task {
         SimpleDateFormat formatter1 = new SimpleDateFormat("dd-MM-yyyy");
         Date ddate = formatter1.parse(sdate);
         System.out.println(ddate);
-
     }
 }
