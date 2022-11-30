@@ -78,12 +78,18 @@ public class CreateWorkspaceForm extends java.awt.Panel {
 
         jTextField3.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
 
+        jTextField1.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+
+        jTextField2.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+
+        jTextField3.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(236, Short.MAX_VALUE)
+                .addGap(200, 200, 200)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 498, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -97,7 +103,7 @@ public class CreateWorkspaceForm extends java.awt.Panel {
                             .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 468, Short.MAX_VALUE)
                             .addComponent(jTextField1)
                             .addComponent(jTextField3))))
-                .addGap(186, 186, 186))
+                .addGap(208, 208, 208))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -116,7 +122,7 @@ public class CreateWorkspaceForm extends java.awt.Panel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(79, 79, 79)
+                .addGap(88, 88, 88)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
