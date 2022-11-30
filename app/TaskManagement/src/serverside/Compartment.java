@@ -49,8 +49,8 @@ public class Compartment extends ServerContainer {
     }
 
     @Override
-    protected Task createTask(String taskName) {
-        Task task = new Task(taskName);
+    protected Task createTask() {
+        Task task = new Task();
         return task;
     }
 

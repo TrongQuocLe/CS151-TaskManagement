@@ -16,6 +16,7 @@ public class User {
     private char[] password;
     private String email;
     private String username;
+    private ArrayList<Task> tasks;
     // private ArrayList<Workspace> workspaces;
 
     // // Default Constructor
@@ -29,6 +30,7 @@ public class User {
         this.userID = UserDatabase.generateUniqueID(firstName, lastName);
         this.username = username;
         this.password = password;
+        tasks = new ArrayList<>();
     }
 
     // Shows current password
@@ -49,6 +51,11 @@ public class User {
     // gets user full name
     public String getUserFullName() {
         return this.firstName + this.lastName;
+    }
+
+    // Create Task
+    public void createTask(Task task) {
+        tasks.add(task);
     }
 
     // // Create Workspace

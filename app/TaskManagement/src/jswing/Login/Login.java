@@ -15,10 +15,19 @@ import serverside.UserDatabase;
 public class Login extends PanelCustom {
 
         private EventLogin event;
+        private User user;
 
         public Login() {
                 initComponents();
                 setAlpha(1);
+        }
+
+        public User getUser() {
+                return this.user;
+        }
+
+        public void setUser(User user) {
+                this.user = user;
         }
 
         public void setEventLogin(EventLogin event) {
@@ -308,7 +317,7 @@ public class Login extends PanelCustom {
                         // Grab user then compare the password field that was inputted with the saved
                         // userPassword
                         User returningUser = database.getUser(email);
-                        passwordCheck(returningUser.getPassword(), password);
+                        passwordCheck(returningUser, returningUser.getPassword(), password);
                 } else {
                         // Say something like wrong email
                         jLabel7.setForeground(new java.awt.Color(255, 102, 102));
@@ -335,10 +344,11 @@ public class Login extends PanelCustom {
 
         }
 
-        private void passwordCheck(char[] up, char[] ip) {
+        private void passwordCheck(User returningUser, char[] up, char[] ip) {
                 if (Arrays.equals(up, ip)) {
                         jLabel7.setForeground(new java.awt.Color(102, 255, 102));
                         jLabel7.setText("Login Successful");
+                        setUser(returningUser);
                         button1.setEnabled(false);
                         event.loginDone();
 
