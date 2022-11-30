@@ -80,22 +80,6 @@ public class MainJFrame extends javax.swing.JFrame {
                         main.showForm(new LoginAndRegister());
                     }
                 }
-<<<<<<< Updated upstream
-                if (menuIndex == 4) {
-                    if (subMenuIndex == 0) {
-                        System.out.println("Create new Container Selected");
-                        main.showForm(new CreateContainerForm());
-                    } else if (subMenuIndex == 1) {
-                        main.showForm(new LoginAndRegister());
-                    }
-                }
-                if (menuIndex == 5) {
-                    if (subMenuIndex == 0) {
-                        System.out.println("Create new Container Selected");
-                        main.showForm(new CreateContainerForm());
-                    } else if (subMenuIndex == 1) {
-                        main.showForm(new LoginAndRegister());
-=======
                 if (menuIndex == 6) {
                     if (subMenuIndex == -1) {
                         main.showForm(new TaskForm());
@@ -104,7 +88,6 @@ public class MainJFrame extends javax.swing.JFrame {
                         createTaskFrame.setVisible(true);
                         createTaskFrame.setUser(returningUser);
                         createTaskFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
->>>>>>> Stashed changes
                     }
                 }
             }
