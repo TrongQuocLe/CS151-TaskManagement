@@ -24,7 +24,7 @@ public class CreateContainerForm extends javax.swing.JPanel {
                 }
             }
 
-        }
+        });
 
         jTextField2 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
