@@ -85,20 +85,19 @@ public class TaskMenu extends javax.swing.JPanel {
         addToMenu(new ModelMenu(createImageIcon(
                 "/icons/icons8-inbox-32.png"), "Inbox"));
         addToMenu(new ModelMenu(createImageIcon(
-                "/icons/icons8-stopwatch-32.png"), "Upcoming Tasks", "task1", "task2", "task3"));
+                "/icons/icons8-stopwatch-32.png"), "Upcoming Tasks"));
         addToMenu(new ModelMenu(createImageIcon(
-                "/icons/icons8-rubik's-cube-32.png"), "Workspace", "Create New +", "SJSU-Fall'22", "SJSU-Spring'23",
-                "Twitter(Internship)"));
+                "/icons/icons8-rubik's-cube-32.png"), "Workspace", "Create New Workspace"));
         addToMenu(new ModelMenu(createImageIcon(
-                "/icons/icons8-container-32.png"), "Containers", "Create New +", "CS-151", "Math-163"));
+                "/icons/icons8-container-32.png"), "Containers", "Create New Container"));
         addToMenu(new ModelMenu(createImageIcon(
-                "/icons/icons8-component-32.png"), "Components", "Create New +", "TaskManagement Dashboard"));
+                "/icons/icons8-component-32.png"), "Components", "Create New Component"));
         addToMenu(new ModelMenu(createImageIcon(
-                "/icons/icons8-pushpin-32.png"), "Tasks", "Create Functions for Buttons"));
+                "/icons/icons8-pushpin-32.png"), "Tasks", "Create New Task"));
         addToMenu(new ModelMenu(createImageIcon(
-                "/icons/icons8-add-to-favorites-32.png"), "Favorites", "CS-151", "MATH-163", "AWS-S3-ETL"));
+                "/icons/icons8-add-to-favorites-32.png"), "Favorites", "Add to Favorites"));
         addToMenu(new ModelMenu(createImageIcon(
-                "/icons/icons8-note-32.png"), "Notes", "Meetings", "Lectures", "Study"));
+                "/icons/icons8-note-32.png"), "Notes", "Create New Notes", "Meetings", "Lectures", "Study"));
         addToMenu(new ModelMenu(createImageIcon(
                 "/icons/icons8-calendar-32.png"), "Calendar"));
         addToMenu(new ModelMenu(createImageIcon(
@@ -187,7 +186,7 @@ public class TaskMenu extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(sp, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                        .addComponent(sp, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
                         .addComponent(brand1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE));
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

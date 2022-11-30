@@ -99,9 +99,9 @@ public class MainJFrame extends javax.swing.JFrame {
             public void timingEvent(float fraction) {
                 double width;
                 if (menu.getShowMenu()) {
-                    width = 60 + (170 * (1f - fraction));
+                    width = 60 + (210 * (1f - fraction));
                 } else {
-                    width = 60 + (170 * fraction);
+                    width = 60 + (210 * fraction);
                 }
                 layout.setComponentConstraints(menu, "w " + width + "!, spany2");
                 menu.revalidate();
