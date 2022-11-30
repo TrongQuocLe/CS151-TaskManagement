@@ -1,6 +1,8 @@
 package serverside;
 
 import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 public class Task {
     private String taskName;
@@ -29,10 +31,35 @@ public class Task {
         COMPLETE
     }
 
-    public Task (){}
+    public Task() {
+    }
 
-    public Task(String name) {
+    public Task(String name, String description, String status, String priority, String startDate, String endDate,
+            String assignee, String estimatedHours) {
         this.taskName = name;
+        this.description = description;
+        setStatus(status);
+        setPriority(priority);
+        setDates(startDate, endDate);
+        setOptional(assignee, estimatedHours);
+
+    }
+
+    public void setDates(String startDate, String endDate) {
+        SimpleDateFormat formatter1 = new SimpleDateFormat("dd-MM-yyyy");
+        try {
+            this.startDate = formatter1.parse(startDate);
+            this.endDate = formatter1.parse(endDate);
+        } catch (ParseException e) {
+            System.out.println(e);
+        }
+    }
+
+    public void setOptional(String assignee, String estimatedHours) {
+        this.assignee = assignee;
+        if (!estimatedHours.isEmpty()) {
+            this.estimatedHours = Integer.parseInt(estimatedHours);
+        }
     }
 
     public String getTaskName() {
@@ -119,20 +146,28 @@ public class Task {
         return this.priority;
     }
 
-    public void setPriority(Priority priority) {
-        this.priority = priority;
+    public void setPriority(String priority) {
+        this.priority = Priority.valueOf(priority.toUpperCase());
     }
 
     public Status getStatus() {
         return this.status;
     }
 
-    public void setStatus(Status status) {
-        this.status = status;
+    public void setStatus(String status) {
+        status = status.replaceAll(" ", "");
+        this.status = Status.valueOf(status.toUpperCase());
     }
 
-    public static void main(String[] args) {
-        Task newTask = new Task("Create Task Class");
+    public static void main(String[] args) throws Exception {
+        Task newTask = new Task();
         System.out.println(newTask.getTaskName());
+        String test1 = "I like bananas";
+        System.out.println(test1.replaceAll(" ", ""));
+        String sdate = "31-12-1998";
+        SimpleDateFormat formatter1 = new SimpleDateFormat("dd-MM-yyyy");
+        Date ddate = formatter1.parse(sdate);
+        System.out.println(ddate);
+
     }
 }

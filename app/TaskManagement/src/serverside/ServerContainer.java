@@ -35,7 +35,7 @@ public abstract class ServerContainer {
         if (taskList == null) {
             taskList = new ArrayList<Task>();
         }
-        task = createTask(taskName);
+        task = createTask();
         this.taskList.add(task);
     }
 
@@ -49,6 +49,6 @@ public abstract class ServerContainer {
 
     protected abstract Compartment createCompartment(String compartmentName);
 
-    protected abstract Task createTask(String taskName);
+    protected abstract Task createTask();
 
 }

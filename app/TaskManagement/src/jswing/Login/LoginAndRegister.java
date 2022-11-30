@@ -12,6 +12,7 @@ import org.jdesktop.animation.timing.Animator;
 import org.jdesktop.animation.timing.TimingTargetAdapter;
 import org.jdesktop.animation.timing.interpolation.PropertySetter;
 import javax.swing.JPanel;
+import serverside.User;
 
 import jswing.event.EventLogin;
 
@@ -111,6 +112,10 @@ public class LoginAndRegister extends JPanel {
 
     public void setEventLogin(EventLogin event) {
         login.setEventLogin(event);
+    }
+
+    public User getUser() {
+        return login.getUser();
     }
 
     @SuppressWarnings("unchecked")

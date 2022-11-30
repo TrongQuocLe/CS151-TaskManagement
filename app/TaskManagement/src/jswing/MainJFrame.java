@@ -12,7 +12,7 @@ import jswing.event.EventLogin;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import serverside.UserDatabase;
-import jswing.ImagePanel;
+import serverside.User;
 
 public class MainJFrame extends javax.swing.JFrame {
 
@@ -22,6 +22,9 @@ public class MainJFrame extends javax.swing.JFrame {
     private MainForm main;
     private Animator animator;
     private HomeForm home;
+    private TaskForm taskForm;
+    private CreateTaskFrame createTaskFrame;
+    private User returningUser;
 
     public MainJFrame() {
         UserDatabase userDatabase = UserDatabase.getInstance();
@@ -30,6 +33,7 @@ public class MainJFrame extends javax.swing.JFrame {
         EventLogin eventLogin = new EventLogin() {
             @Override
             public void loginDone() {
+                setCurrentUser();
                 loginPanel.setVisible(false);
                 loginPanel.setEnabled(false);
                 loginPanel.removeAll();
@@ -43,12 +47,19 @@ public class MainJFrame extends javax.swing.JFrame {
         loginAndRegister1.setEventLogin(eventLogin);
     }
 
+    public void setCurrentUser() {
+        this.returningUser = loginAndRegister1.getUser();
+    }
+
     private void init() {
         layout = new MigLayout("fill", "0[]0[100%, fill]0", "0[fill, top]0");
         bg.setLayout(layout);
         menu = new TaskMenu();
         header = new Header();
         main = new MainForm();
+        taskForm = new TaskForm();
+        createTaskFrame = new CreateTaskFrame();
+
         menu.setEvent(new EventMenuSelected() {
             @Override
             public void menuSelected(int menuIndex, int subMenuIndex) {
@@ -64,26 +75,19 @@ public class MainJFrame extends javax.swing.JFrame {
                 }
                 if (menuIndex == 3) {
                     if (subMenuIndex == 0) {
-                        System.out.println("Create new Workspace Selected");
-                        main.showForm(new CreateWorkspaceForm());
+                        System.out.println("Workspace Selected");
                     } else if (subMenuIndex == 1) {
                         main.showForm(new LoginAndRegister());
                     }
                 }
-                if (menuIndex == 4) {
-                    if (subMenuIndex == 0) {
-                        System.out.println("Create new Container Selected");
-                        main.showForm(new CreateContainerForm());
-                    } else if (subMenuIndex == 1) {
-                        main.showForm(new LoginAndRegister());
+                if (menuIndex == 6) {
+                    if (subMenuIndex == -1) {
+                        main.showForm(new TaskForm());
                     }
-                }
-                if (menuIndex == 5) {
                     if (subMenuIndex == 0) {
-                        System.out.println("Create new Container Selected");
-                        main.showForm(new CreateContainerForm());
-                    } else if (subMenuIndex == 1) {
-                        main.showForm(new LoginAndRegister());
+                        createTaskFrame.setVisible(true);
+                        createTaskFrame.setUser(returningUser);
+                        createTaskFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
                     }
                 }
             }
@@ -116,9 +120,9 @@ public class MainJFrame extends javax.swing.JFrame {
             public void timingEvent(float fraction) {
                 double width;
                 if (menu.getShowMenu()) {
-                    width = 60 + (210 * (1f - fraction));
+                    width = 60 + (220 * (1f - fraction));
                 } else {
-                    width = 60 + (210 * fraction);
+                    width = 60 + (220 * fraction);
                 }
                 layout.setComponentConstraints(menu, "w " + width + "!, spany2");
                 menu.revalidate();
