@@ -58,6 +58,11 @@ public class User {
         tasks.add(task);
     }
 
+    // Get TaskList
+    public ArrayList<Task> getTasks() {
+        return this.tasks;
+    }
+
     // // Create Workspace
     // public void createWorkSpace(String name) {
     // Workspace newWorkspace = new SchoolWorkspace();

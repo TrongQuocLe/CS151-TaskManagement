@@ -351,6 +351,8 @@ public class Login extends PanelCustom {
                         setUser(returningUser);
                         button1.setEnabled(false);
                         event.loginDone();
+                        textField2.setText("");
+                        password1.setText("");
 
                 } else {
                         jLabel7.setForeground(new java.awt.Color(255, 102, 102));
