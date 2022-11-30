@@ -70,6 +70,22 @@ public class MainJFrame extends javax.swing.JFrame {
                         main.showForm(new LoginAndRegister());
                     }
                 }
+                if (menuIndex == 4) {
+                    if (subMenuIndex == 0) {
+                        System.out.println("Create new Container Selected");
+                        main.showForm(new CreateContainerForm());
+                    } else if (subMenuIndex == 1) {
+                        main.showForm(new LoginAndRegister());
+                    }
+                }
+                if (menuIndex == 5) {
+                    if (subMenuIndex == 0) {
+                        System.out.println("Create new Container Selected");
+                        main.showForm(new CreateContainerForm());
+                    } else if (subMenuIndex == 1) {
+                        main.showForm(new LoginAndRegister());
+                    }
+                }
             }
         });
 
