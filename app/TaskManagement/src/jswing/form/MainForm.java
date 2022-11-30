@@ -1,12 +1,15 @@
 package jswing.form;
+
 import java.awt.BorderLayout;
 import java.awt.Component;
 import javax.swing.border.EmptyBorder;
+import jswing.ImagePanel;
 
-public class MainForm extends javax.swing.JPanel {
+public class MainForm extends ImagePanel {
 
     public MainForm() {
         initComponents();
+        setImage(new javax.swing.ImageIcon(getClass().getResource("/icons/CToGD7f-galaxy-desktop-backgrounds.jpg")));
         setOpaque(false);
         setLayout(new BorderLayout());
         setBorder(new EmptyBorder(10, 20, 10, 20));
@@ -18,7 +21,6 @@ public class MainForm extends javax.swing.JPanel {
         repaint();
         revalidate();
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">

@@ -61,7 +61,7 @@ public class ImagePanel extends JPanel {
         }
         int width = getWidth();
         int height = getHeight();
-        g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.5f));
+        g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.2f));
         g2.setColor(new Color(160, 160, 160));
         g2.fillRect(0, 0, getWidth(), getHeight());
         g2.dispose();
