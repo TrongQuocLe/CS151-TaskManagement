@@ -15,6 +15,17 @@ public class CreateContainerForm extends javax.swing.JPanel {
 
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                if (jTextField1.getText().isEmpty()) {
+                    setButtonFalse();
+                } else {
+                    setButtonTrue();
+                }
+            }
+
+        }
+
         jTextField2 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -36,7 +47,7 @@ public class CreateContainerForm extends javax.swing.JPanel {
         jLabel2.setText("Create New Container");
 
         jTextField1.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
-
+        
         jTextField2.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
@@ -135,7 +146,19 @@ public class CreateContainerForm extends javax.swing.JPanel {
                 .addGap(51, 51, 51))
         );
     }// </editor-fold>                        
+    private void setButtonFalse() {
+        jButton1.setEnabled(false);
+        jButton1.setBackground(new java.awt.Color(204, 204, 204));
+        jButton1.setForeground(new java.awt.Color(102, 102, 102));
+    }
 
+    // set button true
+    private void setButtonTrue() {
+        jButton1.setEnabled(true);
+        jButton1.setBackground(new java.awt.Color(51, 153, 255));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+
+    }
 
     // Variables declaration - do not modify                     
     private javax.swing.JButton jButton1;
