@@ -3,15 +3,13 @@ package jswing.form;
 import serverside.User;
 import serverside.Task;
 import jswing.model.ModelTask;
-import jswing.form.CreateTaskFrame;
-import jswing.model.ModelTask;
+
 import jswing.event.EventTaskComplete;
 import jswing.event.EventTaskTableActions;
 import jswing.TableDark;
 import jswing.ImagePanel;
 import jswing.ButtonEffect;
 
-import java.util.Vector;
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 
 public class TaskForm extends javax.swing.JPanel {
