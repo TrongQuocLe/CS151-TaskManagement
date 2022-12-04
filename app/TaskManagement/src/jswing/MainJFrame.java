@@ -45,6 +45,9 @@ public class MainJFrame extends javax.swing.JFrame {
                 setCurrentUser();
                 loginPanel.setVisible(false);
                 loginPanel.setEnabled(false);
+                loginPanel.invalidate();
+                loginPanel.revalidate();
+                loginPanel.repaint();
                 loginPanel.removeAll();
                 initMenu();
             }
@@ -52,6 +55,9 @@ public class MainJFrame extends javax.swing.JFrame {
             @Override
             public void logOut() {
                 bg.removeAll();
+                bg.invalidate();
+                bg.validate();
+                bg.repaint();
                 loginPanel.setVisible(true);
                 loginPanel.setEnabled(true);
                 loginPanel.add(loginAndRegister1);
@@ -64,14 +70,13 @@ public class MainJFrame extends javax.swing.JFrame {
     private void init() {
         layout = new MigLayout("fill", "0[]0[100%, fill]0", "0[fill, top]0");
         bg.setLayout(layout);
-        menu = new TaskMenu();
         header = new Header();
         main = new MainForm();
         createTaskFrame = new CreateTaskFrame();
     }
 
     private void initMenu() {
-        taskForm = new TaskForm(returningUser);
+        menu = new TaskMenu();
         menu.setEvent(new EventMenuSelected() {
             @Override
             public void menuSelected(int menuIndex, int subMenuIndex) {
@@ -102,6 +107,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 }
                 if (menuIndex == 6) {
                     if (subMenuIndex == -1) {
+                        // taskForm.setUser(returningUser);
                         main.showForm(new TaskForm(returningUser));
                     }
                     if (subMenuIndex == 0) {
@@ -112,23 +118,6 @@ public class MainJFrame extends javax.swing.JFrame {
                 }
             }
         });
-
-        // EventLogin eventLogin = new EventLogin() {
-        // @Override
-        // public void loginDone() {
-        // }
-
-        // @Override
-        // public void logOut() {
-        // bg.removeAll();
-        // loginPanel.setVisible(true);
-        // loginPanel.setEnabled(true);
-        // loginPanel.add(new LoginAndRegister());
-        // initLogin();
-        // }
-        // };
-        // header.setEventLogin(eventLogin);
-        // loginAndRegister1.setEventLogin(eventLogin);
 
         menu.initMenuItem();
         bg.add(menu, "w 280!, spany 2");
