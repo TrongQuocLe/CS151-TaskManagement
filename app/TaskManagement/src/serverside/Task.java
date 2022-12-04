@@ -4,6 +4,7 @@ import java.util.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.text.DateFormat;
+import java.util.Objects;
 
 public class Task {
     private String taskName;
@@ -18,6 +19,7 @@ public class Task {
     private Task dependencies;
     private Priority priority;
     private Status status;
+    private String taskID;
 
     enum Priority {
         LOW,
@@ -26,13 +28,21 @@ public class Task {
     }
 
     enum Status {
-        NOTYETSTARTED,
-        ONHOLD,
-        INPROGRESS,
-        COMPLETE
+        NOTYETSTARTED("Not Yet Started"),
+        ONHOLD("On Hold"),
+        INPROGRESS("In Progress"),
+        COMPLETE("Complete");
+
+        private final String name;
+
+        Status(String s) {
+            name = s;
+        }
+
     }
 
     public Task() {
+        setTaskID();
     }
 
     public Task(String name, String description, String status, String priority, String startDate, String endDate,
@@ -43,6 +53,7 @@ public class Task {
         setPriority(priority);
         setDates(startDate, endDate);
         setOptional(assignee, estimatedHours);
+        setTaskID();
 
     }
 
@@ -166,6 +177,14 @@ public class Task {
         return strDate;
     }
 
+    public void setTaskID() {
+        this.taskID = "TSK" + Integer.toHexString(Objects.hashCode(this));
+    }
+
+    public String getTaskId() {
+        return this.taskID;
+    }
+
     public static void main(String[] args) throws Exception {
         Task newTask = new Task();
         System.out.println(newTask.getTaskName());
@@ -175,5 +194,9 @@ public class Task {
         SimpleDateFormat formatter1 = new SimpleDateFormat("dd-MM-yyyy");
         Date ddate = formatter1.parse(sdate);
         System.out.println(ddate);
+        // newTask.setTaskID();
+        System.out.println(newTask.toString());
+        System.out.println(newTask.getTaskId());
+
     }
 }

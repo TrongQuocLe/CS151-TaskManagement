@@ -1,33 +1,57 @@
 package jswing.form;
 
-import java.util.Vector;
 import serverside.User;
 import serverside.Task;
-// import jswing.model.ModelTask;
-import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
+import jswing.model.ModelTask;
 import jswing.form.CreateTaskFrame;
+import jswing.model.ModelTask;
+import jswing.event.EventTaskComplete;
+import jswing.event.EventTaskTableActions;
 import jswing.TableDark;
+import jswing.ImagePanel;
 import jswing.ButtonEffect;
+
+import java.util.Vector;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 
 public class TaskForm extends javax.swing.JPanel {
         private User user;
         private Task task;
-        private Vector row;
         private CreateTaskFrame taskFrame;
-
-        // public TaskForm() {
-        // initComponents();
-        // taskFrame = new CreateTaskFrame();
-        // tableDark1.fixTable(jScrollPane2);
-        // initData();
-        // }
+        private TaskObjectFrame taskObjFrame;
 
         public TaskForm(User user) {
                 this.user = user;
                 initComponents();
                 taskFrame = new CreateTaskFrame();
-                tableDark1.fixTable(jScrollPane2);
+                taskObjFrame = new TaskObjectFrame();
+                tableDark.fixTable(jScrollPane);
                 initData();
+                EventTaskComplete taskEvent = new EventTaskComplete() {
+                        @Override
+                        public void taskCreated() {
+                                taskFrame.dispose();
+                                revalidate();
+                                repaint();
+                        }
+
+                        @Override
+                        public void taskDelete() {
+                                taskObjFrame.dispose();
+                                revalidate();
+                                repaint();
+
+                        }
+
+                        @Override
+                        public void taskUpdate() {
+                                taskObjFrame.dispose();
+                                revalidate();
+                                repaint();
+                        }
+                };
+                taskFrame.setTaskEvent(taskEvent);
+                taskObjFrame.setTaskEvent(taskEvent);
         }
 
         public void setUser(User user) {
@@ -43,20 +67,29 @@ public class TaskForm extends javax.swing.JPanel {
         }
 
         private void initTableData() {
-                if (!this.user.getTasks().isEmpty()) {
-                        for (int i = 0; i < this.user.getTasks().size(); i++) {
-                                row = new Vector();
-                                task = this.user.getTasks().get(i);
-                                row.add(task.getTaskName());
-                                row.add(task.getDescription());
-                                row.add(task.getStartDate());
-                                row.add(task.getEndDate());
-                                row.add(task.getPriority());
-                                row.add(task.getStatus());
-                                row.add(task.getAssignee());
-                                row.add(task.getEstimatedHours());
-                                tableDark1.addRow(row);
+                EventTaskTableActions eventAction = new EventTaskTableActions() {
+                        @Override
+                        public void delete(ModelTask task) {
+
                         }
+
+                        @Override
+                        public void update(ModelTask task) {
+                                taskObjFrame.setVisible(true);
+                                System.out.println("Say something stupid");
+
+                        }
+                };
+                try {
+                        for (int i = 0; i < this.user.getTasks().size(); i++) {
+                                task = this.user.getTasks().get(i);
+                                tableDark.addRow(new ModelTask(task.getTaskId(), task.getTaskName(),
+                                                task.getDescription(), task.getStartDate(), task.getEndDate(),
+                                                task.getPriority(), task.getStatus(), task.getNotes(),
+                                                task.getAssignee()).toRowTable(eventAction));
+                        }
+                } catch (NullPointerException e) {
+                        System.err.print("You currently have no tasks");
                 }
         }
 
@@ -70,16 +103,29 @@ public class TaskForm extends javax.swing.JPanel {
         private void initComponents() {
 
                 jLabel1 = new javax.swing.JLabel();
+                jScrollPane = new javax.swing.JScrollPane();
+                tableDark = new TableDark();
+                imagePanel1 = new ImagePanel();
                 buttonEffect1 = new ButtonEffect();
-                buttonEffect2 = new ButtonEffect();
-                jScrollPane2 = new javax.swing.JScrollPane();
-                tableDark1 = new TableDark();
 
                 setOpaque(false);
 
                 jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
                 jLabel1.setForeground(new java.awt.Color(255, 255, 255));
                 jLabel1.setText("Tasks");
+
+                tableDark.setModel(new javax.swing.table.DefaultTableModel(
+                                new Object[][] {
+                                                { null, null, null, null, null, null, null, null, null, null },
+                                                { null, null, null, null, null, null, null, null, null, null },
+                                                { null, null, null, null, null, null, null, null, null, null },
+                                                { null, null, null, null, null, null, null, null, null, null }
+                                },
+                                new String[] {
+                                                "Task ID", "Task Name", "Description", "Start Date", "End Date",
+                                                "Priority", "Status", "Notes", "Assigned To", "Action"
+                                }));
+                jScrollPane.setViewportView(tableDark);
 
                 buttonEffect1.setForeground(new java.awt.Color(255, 255, 255));
                 buttonEffect1.setText("Add Task");
@@ -90,33 +136,28 @@ public class TaskForm extends javax.swing.JPanel {
                         }
                 });
 
-                buttonEffect2.setForeground(new java.awt.Color(255, 255, 255));
-                buttonEffect2.setText("Remove Task");
-                buttonEffect2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-
-                tableDark1.setModel(new javax.swing.table.DefaultTableModel(
-                                new Object[][] {
-                                                { null, null, null, null, null, null, null, null },
-                                                { null, null, null, null, null, null, null, null },
-                                                { null, null, null, null, null, null, null, null },
-                                                { null, null, null, null, null, null, null, null },
-                                                { null, null, null, null, null, null, null, null },
-                                                { null, null, null, null, null, null, null, null },
-                                                { null, null, null, null, null, null, null, null },
-                                                { null, null, null, null, null, null, null, null },
-                                                { null, null, null, null, null, null, null, null },
-                                                { null, null, null, null, null, null, null, null },
-                                                { null, null, null, null, null, null, null, null },
-                                                { null, null, null, null, null, null, null, null },
-                                                { null, null, null, null, null, null, null, null },
-                                                { null, null, null, null, null, null, null, null },
-                                                { null, null, null, null, null, null, null, null }
-                                },
-                                new String[] {
-                                                "Task Name", "Description", "Start Date", "End Date", "Priority",
-                                                "Status", "Estimated Hours", "Assigned To"
-                                }));
-                jScrollPane2.setViewportView(tableDark1);
+                javax.swing.GroupLayout imagePanel1Layout = new javax.swing.GroupLayout(imagePanel1);
+                imagePanel1.setLayout(imagePanel1Layout);
+                imagePanel1Layout.setHorizontalGroup(
+                                imagePanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(imagePanel1Layout.createSequentialGroup()
+                                                                .addContainerGap()
+                                                                .addComponent(buttonEffect1,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                100,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                Short.MAX_VALUE)));
+                imagePanel1Layout.setVerticalGroup(
+                                imagePanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, imagePanel1Layout
+                                                                .createSequentialGroup()
+                                                                .addContainerGap(11, Short.MAX_VALUE)
+                                                                .addComponent(buttonEffect1,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addContainerGap()));
 
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
                 this.setLayout(layout);
@@ -126,41 +167,30 @@ public class TaskForm extends javax.swing.JPanel {
                                                                 .addGap(20, 20, 20)
                                                                 .addGroup(layout.createParallelGroup(
                                                                                 javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                .addComponent(jLabel1)
                                                                                 .addGroup(layout.createSequentialGroup()
-                                                                                                .addComponent(buttonEffect1,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                87,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                .addPreferredGap(
-                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                                                                .addComponent(buttonEffect2,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                                .addComponent(jScrollPane2,
+                                                                                                .addComponent(jLabel1)
+                                                                                                .addGap(0, 0, Short.MAX_VALUE))
+                                                                                .addComponent(jScrollPane,
                                                                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                885, Short.MAX_VALUE))
-                                                                .addGap(20, 20, 20)));
+                                                                                                881, Short.MAX_VALUE)
+                                                                                .addComponent(imagePanel1,
+                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                Short.MAX_VALUE))
+                                                                .addGap(24, 24, 24)));
                 layout.setVerticalGroup(
                                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addGroup(layout.createSequentialGroup()
                                                                 .addGap(12, 12, 12)
                                                                 .addComponent(jLabel1)
-                                                                .addGap(31, 31, 31)
-                                                                .addGroup(layout.createParallelGroup(
-                                                                                javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                                .addComponent(buttonEffect1,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                .addComponent(buttonEffect2,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                .addGap(18, 18, 18)
-                                                                .addComponent(jScrollPane2)
-                                                                .addGap(20, 20, 20)));
+                                                                .addGap(9, 9, 9)
+                                                                .addComponent(imagePanel1,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addGap(7, 7, 7)
+                                                                .addComponent(jScrollPane)
+                                                                .addGap(15, 15, 15)));
         }// </editor-fold>
 
         private void buttonEffect1ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -172,9 +202,9 @@ public class TaskForm extends javax.swing.JPanel {
 
         // Variables declaration - do not modify
         private ButtonEffect buttonEffect1;
-        private ButtonEffect buttonEffect2;
+        private ImagePanel imagePanel1;
         private javax.swing.JLabel jLabel1;
-        private javax.swing.JScrollPane jScrollPane2;
-        private TableDark tableDark1;
+        private javax.swing.JScrollPane jScrollPane;
+        private TableDark tableDark;
         // End of variables declaration
 }

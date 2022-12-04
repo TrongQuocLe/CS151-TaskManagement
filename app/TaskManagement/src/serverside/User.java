@@ -1,6 +1,8 @@
 package serverside;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 // import com.google.gson.Gson;
 
@@ -16,7 +18,7 @@ public class User {
     private char[] password;
     private String email;
     private String username;
-    private ArrayList<Task> tasks;
+    private List<Task> tasks;
     // private ArrayList<Workspace> workspaces;
 
     // // Default Constructor
@@ -59,8 +61,13 @@ public class User {
     }
 
     // Get TaskList
-    public ArrayList<Task> getTasks() {
+    public List<Task> getTasks() {
         return this.tasks;
+    }
+
+    // Delete Task from taskList
+    public void deleteTasks(Task task) {
+        this.tasks.remove(task);
     }
 
     // // Create Workspace
@@ -77,5 +84,8 @@ public class User {
         System.out.println(kyle.getUserID());
         System.out.println(kyle.username);
         System.out.println(kyle.toString());
+        System.out.println(Integer.toHexString(Objects.hashCode(kyle)));
+
     }
+
 }
