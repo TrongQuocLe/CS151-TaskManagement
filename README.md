@@ -41,7 +41,7 @@ The intended use of this application is if you wish to visualize your task on th
 | [State](https://github.com/TrongQuocLe/CS151-TaskManagement/blob/main/diagrams/Trong_Le_TaskManagement_StateDiagram.pdf) | Contains `Task Management System` and `Task Modification`.                                     |
 | [Use Case](https://github.com/TrongQuocLe/CS151-TaskManagement/blob/main/diagrams/Use%20Case%20Diagram.pdf)              | Allows main student doing all the tasks, but limit to other added student.                     |
 | [Timing](https://github.com/TrongQuocLe/CS151-TaskManagement/blob/main/diagrams/Timing%20Diagram.drawio.pdf)             | Displays the change in state, time took in doing and access tasks or projects.                 |
-| [Sequence Diagram](https://github.com/TrongQuocLe/CS151-TaskManagement/blob/main/diagrams/Timing%20Diagram.drawio.pdf)   | Sequence of User action and server response                                                    |
+| [Sequence Diagram](https://github.com/TrongQuocLe/CS151-TaskManagement/blob/main/diagrams/SequenceDiagram.drawio.png)   | Sequence of User action and server response                                                    |
 
 ### **Functionality:**
 
@@ -50,7 +50,7 @@ This application will provide an orangize way to set your tasks and priority of 
 ### **Operation:**
 
 User will create an account that will store their data. Once User Logins, You will be greeted with personalized Homepage. From the homepage you can then create a workspace to organize your tasks. Workspace would be your main or root folder and then you can create containers in your workspace. This will help students to create different containers to contain different classes and within each of these class they will have seperate components that make up that container or class. An example would be Workspace(SJSU)--has-a->Container(CS151)--has-a->Component(Homework)--has-a->Task(Homework 1).  
-Top Level View of Operation: [Task Management Diagram (Top Level)]()
+Top Level View of Operation: [Task Management Diagram (Top Level)](https://github.com/TrongQuocLe/CS151-TaskManagement/blob/main/diagrams/Task%20Management.drawio.png)
 
 ### **Solution:**
 
