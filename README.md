@@ -41,7 +41,7 @@ The intended use of this application is if you wish to visualize your task on th
 | [State](https://github.com/TrongQuocLe/CS151-TaskManagement/blob/main/diagrams/Trong_Le_TaskManagement_StateDiagram.pdf) | Contains `Task Management System` and `Task Modification`.                                     |
 | [Use Case](https://github.com/TrongQuocLe/CS151-TaskManagement/blob/main/diagrams/Use%20Case%20Diagram.pdf)              | Allows main student doing all the tasks, but limit to other added student.                     |
 | [Timing](https://github.com/TrongQuocLe/CS151-TaskManagement/blob/main/diagrams/Timing%20Diagram.drawio.pdf)             | Displays the change in state, time took in doing and access tasks or projects.                 |
-| [Sequence Diagram](https://github.com/TrongQuocLe/CS151-TaskManagement/blob/main/diagrams/Timing%20Diagram.drawio.pdf)   | Sequence of User action and server response                                                    |
+| [Sequence Diagram](https://github.com/TrongQuocLe/CS151-TaskManagement/blob/main/diagrams/SequenceDiagram.drawio.png)   | Sequence of User action and server response                                                    |
 
 ### **Functionality:**
 
