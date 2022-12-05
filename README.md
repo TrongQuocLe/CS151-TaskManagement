@@ -50,7 +50,7 @@ This application will provide an orangize way to set your tasks and priority of 
 ### **Operation:**
 
 User will create an account that will store their data. Once User Logins, You will be greeted with personalized Homepage. From the homepage you can then create a workspace to organize your tasks. Workspace would be your main or root folder and then you can create containers in your workspace. This will help students to create different containers to contain different classes and within each of these class they will have seperate components that make up that container or class. An example would be Workspace(SJSU)--has-a->Container(CS151)--has-a->Component(Homework)--has-a->Task(Homework 1).  
-Top Level View of Operation: [Task Management Diagram (Top Level)]()
+Top Level View of Operation: [Task Management Diagram (Top Level)](https://github.com/TrongQuocLe/CS151-TaskManagement/blob/main/diagrams/Task%20Management.drawio.png)
 
 ### **Solution:**
 
