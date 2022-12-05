@@ -59,7 +59,7 @@ We attempted to solve this solution by implementing the diagram above. We tried 
 ### **Steps to run code:**
 
 Go to [MainJFrame.java](https://github.com/TrongQuocLe/CS151-TaskManagement/blob/main/app/TaskManagement/src/jswing/MainJFrame.java) and run that file.  
- Or Simply Run the [TaskManagement.jar](https://github.com/TrongQuocLe/CS151-TaskManagement/tree/main/app/TaskManagement/src)
+ Or Simply Run the [TaskManagement.jar](https://github.com/TrongQuocLe/CS151-TaskManagement/blob/main/app/TaskManagement/TaskManagement.jar)
 
 ### **SnapShots of the App:**
 
