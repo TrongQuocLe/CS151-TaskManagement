@@ -63,11 +63,11 @@ Go to [MainJFrame.java](https://github.com/TrongQuocLe/CS151-TaskManagement/blob
 
 ### **SnapShots of the App:**
 
-![Login](https://github.com/lo7kyle/Cryptocurrencies/blob/main/Resources/texttonumbers.PNG)  
-![HomePage](https://github.com/lo7kyle/Cryptocurrencies/blob/main/Resources/texttonumbers.PNG)  
-![TaskPage](https://github.com/lo7kyle/Cryptocurrencies/blob/main/Resources/texttonumbers.PNG)  
-![Create New Task](https://github.com/lo7kyle/Cryptocurrencies/blob/main/Resources/texttonumbers.PNG)  
-![Update Task](https://github.com/lo7kyle/Cryptocurrencies/blob/main/Resources/texttonumbers.PNG)
+![Login](https://github.com/TrongQuocLe/CS151-TaskManagement/blob/main/App%20Snapshots/LoginandRegister.PNG)  
+![HomePage](https://github.com/TrongQuocLe/CS151-TaskManagement/blob/main/App%20Snapshots/Home-Dashboard.PNG)  
+![TaskPage](https://github.com/TrongQuocLe/CS151-TaskManagement/blob/main/App%20Snapshots/TaskForm.PNG)  
+![Create New Task](https://github.com/TrongQuocLe/CS151-TaskManagement/blob/main/App%20Snapshots/CreateTaskForm.PNG)  
+![Update Task](https://github.com/TrongQuocLe/CS151-TaskManagement/blob/main/App%20Snapshots/TaskUpdate.PNG)
 
 ### **Project SetBacks:**
 
